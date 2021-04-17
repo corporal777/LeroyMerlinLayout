@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_head_height"
+            android:background="@color/green"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+
+            <FrameLayout
+                android:id="@+id/fl_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1mm">
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                app:title=""
+                android:id="@+id/anim_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="parallax"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14mm"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Поиск товаров"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3mm">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_search"
+                        android:layout_width="50mm"
+                        android:layout_height="8mm"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="5dp">
+
+
+                        <EditText
+                            android:id="@+id/et_search_beauty"
+                            android:layout_width="45mm"
+                            android:layout_height="8mm"
+                            android:layout_marginLeft="4mm"
+                            android:background="@android:color/transparent"
+                            android:hint="Поиск"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textCapWords"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_search"
+                            android:layout_width="8mm"
+                            android:layout_height="6mm"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginRight="1mm"
+                            android:backgroundTint="@color/green"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+
+                            <ImageView
+                                android:layout_width="3mm"
+                                android:layout_height="3mm"
+                                android:layout_gravity="center"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:src="@drawable/ic_search" />
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_strix"
+                        android:layout_width="8mm"
+                        android:layout_height="8mm"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="1mm"
+                        android:layout_marginTop="3mm"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp">
+
+
+                        <ImageView
+                            android:layout_width="5mm"
+                            android:layout_height="5mm"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/ic_barcode" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:clickable="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="25mm"
+                android:layout_marginTop="3mm"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24mm">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_work"
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="3mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginBottom="1mm"
+                            android:backgroundTint="@color/green"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+
+                            <ImageView
+                                android:layout_width="6mm"
+                                android:layout_height="6mm"
+                                android:layout_marginLeft="13mm"
+                                android:layout_marginTop="13mm"
+                                android:clickable="false"
+                                android:contentDescription="TODO"
+                                android:src="@drawable/ic_bas" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:layout_marginTop="2mm"
+                                android:clickable="false"
+                                android:text="Каталог"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="2mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginBottom="1mm"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#F4F4F4"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_plant"
+                                android:layout_width="15mm"
+                                android:layout_height="15mm"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="7mm"
+                                android:layout_marginTop="4mm"
+                                android:adjustViewBounds="true"
+                                android:clickable="false"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:layout_marginTop="2mm"
+                                android:clickable="false"
+                                android:text="Сад"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="2mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginBottom="1mm"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#F4F4F4"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_lamp"
+                                android:layout_width="12mm"
+                                android:layout_height="12mm"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="10mm"
+                                android:layout_marginTop="4mm"
+                                android:adjustViewBounds="true"
+                                android:clickable="false"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo2" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:layout_marginTop="2mm"
+                                android:clickable="false"
+                                android:text="Освещение"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="2mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginBottom="1mm"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#F4F4F4"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_tools"
+                                android:layout_width="13mm"
+                                android:layout_height="11mm"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="10mm"
+                                android:layout_marginTop="4mm"
+                                android:adjustViewBounds="true"
+                                android:clickable="false"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo3" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:layout_marginTop="2mm"
+                                android:clickable="false"
+                                android:text="Инструменты"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="2mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginBottom="1mm"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#F4F4F4"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_builds"
+                                android:layout_width="13mm"
+                                android:layout_height="11mm"
+                                android:layout_gravity="bottom"
+                                android:layout_marginLeft="9mm"
+                                android:layout_marginTop="4mm"
+                                android:adjustViewBounds="true"
+                                android:clickable="false"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo4" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:layout_marginTop="2mm"
+                                android:clickable="false"
+                                android:text="Стройматериалы"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="22mm"
+                            android:layout_height="21mm"
+                            android:layout_marginLeft="2mm"
+                            android:layout_marginTop="1mm"
+                            android:layout_marginRight="2mm"
+                            android:layout_marginBottom="1mm"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="4dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#F4F4F4"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                app:civ_border_width="0dp"
+                                android:layout_marginTop="5mm"
+                                app:civ_border_color="@color/green"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_width="7mm"
+                                android:layout_height="7mm"
+                                app:civ_circle_background_color="@color/green"
+                                android:src="@drawable/ic_nextt" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5mm"
+                                android:clickable="false"
+                                android:text="Cмотреть все"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6mm"
+                android:clickable="false"
+                android:layout_marginLeft="2mm"
+                android:text="Недавно просмотренные"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+            <LinearLayout
+                android:layout_marginLeft="2.5mm"
+                android:layout_marginTop="1mm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_1"
+                    android:layout_width="18mm"
+                    android:layout_height="18mm"
+                    android:src="@drawable/photo5"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/iv_2"
+                    android:layout_marginLeft="5mm"
+                    android:layout_width="16mm"
+                    android:layout_height="16mm"
+                    android:src="@drawable/photo6"
+                    android:contentDescription="TODO"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="2mm"
+                android:layout_marginLeft="2mm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:layout_marginLeft="1mm"
+                        android:text="36 990 р/шт"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:layout_marginLeft="1mm"
+                        android:text="Генератор\nбензиновый Ма..."
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_marginLeft="2mm"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:layout_marginLeft="2mm"
+                        android:text="730, 35 р/шт"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:layout_marginLeft="2mm"
+                        android:text="Керамогранит\nEuroceramika Ka..."
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8mm"
+                android:layout_marginLeft="2mm"
+                android:text="Предложение ограничено"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="27mm"
+                android:layout_marginTop="3mm"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_marginBottom="3mm"
+                        android:layout_width="match_parent"
+                        android:layout_height="26mm">
+
+                        <LinearLayout
+                            android:layout_marginLeft="2mm"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_3"
+                                android:layout_marginLeft="2mm"
+                                android:layout_width="16mm"
+                                android:layout_height="16mm"
+                                android:src="@drawable/photo6"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="730, 35 р/шт"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="Керамогранит\nEuroceramika Ka..."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginLeft="3mm"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_5"
+                                android:layout_marginLeft="1mm"
+                                android:layout_width="18mm"
+                                android:layout_height="16mm"
+                                android:src="@drawable/photo7"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="413 р/шт"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="Штукатурка\nгипсовая Knauf..."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3mm"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_6"
+                                android:layout_width="18mm"
+                                android:layout_height="16mm"
+                                android:layout_marginLeft="0.6mm"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/photo8" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:clickable="false"
+                                android:text="7 788 р/шт"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2mm"
+                                android:clickable="false"
+                                android:text="Перфотратор\nSDS-plus Makita..."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginLeft="3mm"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_7"
+                                android:layout_marginLeft="0.6mm"
+                                android:layout_width="18mm"
+                                android:layout_height="16mm"
+                                android:src="@drawable/photo9"
+                                android:contentDescription="TODO"
+                                android:scaleType="centerCrop" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="722 р/шт"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:layout_marginLeft="2mm"
+                                android:text="Грунтовка\nглубоко прон..."
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

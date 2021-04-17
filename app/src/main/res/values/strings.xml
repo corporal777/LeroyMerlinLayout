@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Logo</string>
+    <string name="adam">Adam</string>
+    <string name="account">Аккаунт</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="settings">Настройки</string>
+    <string name="notifications">Уведомления и звук</string>
+    <string name="theme_settings">Настройки чатов</string>
+    <string name="choose_language">Сменить язык</string>
+    <string name="data_memory">Данные и память</string>
+    <string name="polit">Политика конфиденциальности</string>
+    <string name="about_user">Коротко о себе:</string>
+    <string name="input_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="calls">Звонки</string>
+    <string name="Settings">Настройки</string>
+    <string name="Contacts">Контакты</string>
+    <string name="Chats">Чаты</string>
+    <string name="accept">Принять</string>
+</resources>

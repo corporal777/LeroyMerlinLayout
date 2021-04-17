@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "602892524637",
+    "project_id": "logo-ce160",
+    "storage_bucket": "logo-ce160.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602892524637:android:3c5de11f0d21131d1241b4",
+        "android_client_info": {
+          "package_name": "com.example.logo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602892524637-8nbq82o7ru4gbfk6imt0ltqlboja3na1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp5GoQTJBBViX42-YcIA1-z3dHxtj2Z9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602892524637-8nbq82o7ru4gbfk6imt0ltqlboja3na1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
